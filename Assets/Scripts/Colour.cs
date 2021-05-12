@@ -99,8 +99,11 @@ public class Colour : MonoBehaviour
     // Mode text
     private static int alength = 18;
     public InputField geneCopyField;
-    public Text geneText;
+    //public Text geneText;
     public Text geneOriginalText;
+    public Text geneCopyText;
+    private string mainGene;
+    private string secondGene;
     //private LogFile logFile;
 
     public float[] expCopy;
@@ -373,7 +376,8 @@ public class Colour : MonoBehaviour
             {
                 colourHeartPiece(hp[i], values[geneIndex].Values[i], lMax, lMin);
                 safeOriginal(values[geneIndex].Values[i], lMax, lMin);
-                //geneOriginalText.text = SentenceCase(geneName);
+                geneOriginalText.text = "Currently selected gene for main model: " + SentenceCase(geneName);
+                mainGene = SentenceCase(geneName);
             }
             //logFile.writeToFile(SentenceCase(geneName), false);
 
@@ -407,7 +411,8 @@ public class Colour : MonoBehaviour
             {
                 colourHeartPiece(copyhp[i], values[copyGeneIndex].Values[i], lMax, lMin);
                 safeCopy(values[copyGeneIndex].Values[i], lMax, lMin);
-               // GameObject.Find("GeneName").GetComponentInChildren<Text>().text = SentenceCase(copyGene);
+                geneCopyText.text = "Currently selected gene for second model: " + SentenceCase(copyGene);
+                secondGene = SentenceCase(copyGene);
             }
             //logFile.writeToFile(SentenceCase(copyGene), true);
 
@@ -470,7 +475,8 @@ public class Colour : MonoBehaviour
 
     public void colorHEatMap()
     {
-        geneOriginalText.text = SentenceCase(currentGene) + " - " + SentenceCase(geneCopyField.text);
+        geneOriginalText.text = mainGene + " - " + secondGene;
+        geneCopyText.text = "";
         GetComponent<InputControl>().callResetHeatMap();
 
         for (int i = 0; i < 18; i++)

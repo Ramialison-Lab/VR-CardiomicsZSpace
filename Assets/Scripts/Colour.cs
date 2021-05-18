@@ -104,7 +104,7 @@ public class Colour : MonoBehaviour
     public Text geneCopyText;
     private string mainGene;
     private string secondGene;
-    //private LogFile logFile;
+    private LogFile logFile;
 
     public float[] expCopy;
     public float[] expOriginal;
@@ -123,7 +123,7 @@ public class Colour : MonoBehaviour
         expCopy = new float[alength];
         expOriginal = new float[alength];
         expHeatMap = new float[alength];
-       // logFile = FindObjectOfType<LogFile>();
+        logFile = FindObjectOfType<LogFile>();
 
         // cache the array of all mouse gene names
         // allGeneNames = ValidGeneNames.names; // GetValidGeneNames();
@@ -379,7 +379,7 @@ public class Colour : MonoBehaviour
                 geneOriginalText.text = "Currently selected gene for main model: " + SentenceCase(geneName);
                 mainGene = SentenceCase(geneName);
             }
-            //logFile.writeToFile(SentenceCase(geneName), false);
+            logFile.writeToFile(SentenceCase(geneName), false);
 
         }
         if (copyGeneIndex > -1)
@@ -414,7 +414,7 @@ public class Colour : MonoBehaviour
                 geneCopyText.text = "Currently selected gene for second model: " + SentenceCase(copyGene);
                 secondGene = SentenceCase(copyGene);
             }
-            //logFile.writeToFile(SentenceCase(copyGene), true);
+            logFile.writeToFile(SentenceCase(copyGene), true);
 
 
         }

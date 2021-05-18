@@ -8,7 +8,6 @@ public class InputControl : MonoBehaviour
 
     public void combinedView()
     {
-        Debug.Log("dsad");
         if (GameObject.Find("HeartCopy(Clone)") == null)
             Instantiate(copy);
             GameObject.Find("HeartCopy(Clone)").transform.position = new Vector3(0.5f, 0, 1.13f);

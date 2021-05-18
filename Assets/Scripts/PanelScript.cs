@@ -24,12 +24,12 @@ public class PanelScript : MonoBehaviour
     public GameObject heatMap;
     public ArrayList geneList = new ArrayList();
     private ArrayList plainLevel = new ArrayList();
-   // private LogFile logFile;
+    private LogFile logFile;
     private int upto;
 
     void Start()
     {
-        //logFile = FindObjectOfType<LogFile>();
+        logFile = FindObjectOfType<LogFile>();
 
         // LH.SetActive(false);
     }
@@ -180,7 +180,7 @@ public class PanelScript : MonoBehaviour
     {
         foreach (string str in geneList)
         {
-           // logFile.exportGenelist(str);
+           logFile.exportGenelist(str);
         }
     }
 

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\FileUpload.cs" />
     <Compile Include="Assets\Scripts\GeneSet.cs" />
     <Compile Include="Assets\Scripts\GSelection.cs" />
+    <Compile Include="Assets\Scripts\LogFile.cs" />
     <Compile Include="Assets\Scripts\PanelScript.cs" />
     <Compile Include="Assets\Scripts\PressHandler.cs" />
     <Compile Include="Assets\Scripts\zSpace\InputControl.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Assets\zSpace\Core\Scripts\ZFrame.Gizmos.cs" />
     <Compile Include="Assets\zSpace\Core\Scripts\ZProvider.cs" />
     <Compile Include="Assets\zSpace\Core\Scripts\ZProvider.State.cs" />
+    <None Include="Assets\SimilarGeneList.txt" />
     <None Include="Assets\Resources\genesets\cluster_13.txt" />
     <None Include="Assets\Resources\genesets\geneset.txt" />
     <None Include="Assets\Resources\genesets\cluster_9.txt" />
@@ -165,6 +167,7 @@
     <None Include="Assets\Resources\genesets\cluster_12.txt" />
     <None Include="Assets\Resources\genesets\cluster_5.txt" />
     <None Include="Assets\Resources\valid_gene_names.txt" />
+    <None Include="Assets\SessionLog.txt" />
     <None Include="Assets\Resources\GENE-DESCRIPTION-TSV_MGI_9.tsv.txt" />
     <None Include="Assets\Resources\genesets\cluster_2.txt" />
     <None Include="Assets\Resources\genesets\cluster_11.txt" />

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System;
 using System.Linq;
+using zSpace.Core.Input;
+using UnityEngine.EventSystems;
 
 /*****
  * 
@@ -24,22 +26,74 @@ public class GSelection : MonoBehaviour
 
     public GameObject ES;
 
+    public ZPointer ZPointer;
+
     string hName = "";
     // Name of heart piece that is highlighted
 
     Vector3 originalPosition;
 
+    private void Start()
+    {
+        onUpdate = DoMouseRaycast;
+        // keep mouse, and add stylus
+        if (ZPointer)
+            onUpdate += DoZSpaceRaycast;
+    }
+
+    private delegate void UpdateTask();
+    private UpdateTask onUpdate;
+
     void Update()
     {
-        // Send out ray to see if mouse is hovering over a heart piece
+        onUpdate.Invoke();
+    }
 
+    private void DoZSpaceRaycast()
+    {
+        if (ZPointer.GetButtonDown(2)) // id == 2 is the left stylus button (triangle) 
+        {
+            RaycastResult result = ZPointer.PressHitInfo;
+            if (!result.gameObject)
+                return;
+
+            hName = result.gameObject.name;
+            switch(Compare.first)
+            {
+                case 0:
+                    // do nothing?
+                    return;
+                case 1:
+                    if (!Compare.pieces2.Contains(hName))
+                    {
+                        if (Compare.pieces1.Contains(hName))
+                            outRemove(hName, 1);
+                        else
+                            outAdd(hName, 1);
+                    }
+                    return;
+                case 2:
+                    if (!Compare.pieces1.Contains(hName))
+                    {
+                        if (Compare.pieces2.Contains(hName))
+                            outRemove(hName, 2);
+                        else
+                            outAdd(hName, 2);
+                    }
+                    return;
+            }
+        }
+    }
+
+    private void DoMouseRaycast()
+    {
+        // Send out ray to see if mouse is hovering over a heart piece
         if (Input.GetMouseButtonDown(0) && Compare.first != 0 && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         { // and not over a UI element?
-			
-            Ray ray = CC.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            Ray ray = CC.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit))
             { // If it hits a piece of heart
 
                 hName = hit.transform.name;
@@ -57,7 +111,7 @@ public class GSelection : MonoBehaviour
                         outAdd(hName, 1);
                     }
                 }
-						
+
                 if (Compare.first == 2 && !Compare.pieces1.Contains(hName))
                 { // Red
                     if (Compare.pieces2.Contains(hName))
@@ -75,7 +129,6 @@ public class GSelection : MonoBehaviour
             }
 
         }
-
     }
 
     private void outAdd(string hName, int comp)
@@ -117,7 +170,7 @@ public class GSelection : MonoBehaviour
         {
             sMat.SetColor("_OutlineColor", new Color(1, 0, 0));
         }
-        sMat.SetFloat("_Outline", 0.002F);
+        sMat.SetFloat("_Outline", 0.2F);
 
     }
 

@@ -5,7 +5,7 @@
 ### Overview
 3D-Cardiomics-VR for zSpace provides a framework to map multi dimensional data (such as intensity and location of gene expression) on to 3D models in a heatmap-like manner. In our use case the intensity is the level of gene expression of those expressed in the adult heart, and the location is this expression level in 18 discrete pieces of the heart as measured by RNA-seq.
 
-This code only supports 2D and zSpace [klick here](https://github.com/Ramialison-Lab/3DCardiomicsVR) for VR code or visit [here](https://github.com/Ramialison-Lab/3DCardiomics) for Webapplication Repo.
+This code only supports 2D monitor solutions and zSpace. [VR code](https://github.com/Ramialison-Lab/3DCardiomicsVR) and the [Webapplication](https://github.com/Ramialison-Lab/3DCardiomics) are also available.
 
 ## Supported Devices
 

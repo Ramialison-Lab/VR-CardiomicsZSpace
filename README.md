@@ -7,7 +7,7 @@
 
 ## Supported Devices
 
-Currently all zSpace devices from AIO 200 upwards are fully supported if not declared EOA.
+Currently all zSpace devices from AIO 200 upwards are fully supported if not declared EOL.
 
 ## Upload Files
 

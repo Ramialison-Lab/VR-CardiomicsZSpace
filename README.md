@@ -27,10 +27,13 @@ In order to change expression data, import *.txt* file in Ressources folder. The
 
 ![CSVpath](https://user-images.githubusercontent.com/79250095/126587353-91838b1c-c559-4013-af3b-3e2313960c66.PNG)
 
+## Dependencies
+
 - Unity (2018.4.23.f1)
+- zSpace Core plugin ([see below](#plugin)) 
 
 ### Instructions
 Start Unity 2018.4.23.f1 or later on the folder structure of the gitHub Repo. Ensure that zSpace is installed and running. For further information on zSpace setup [klick here](https://support.zspace.com/s/article/Setting-up-your-zSpace-Laptop-and-user-guide?language=en_US). Please note EOL of zSpace devices. 
 
-In order to run the code on zSpace in Unity import zSpace plugin. For zSpace Plugin information for Unity to support main features please see [here](https://developer.zspace.com/docs/unity3d-setup). 
+<a name="plugin">In order</a> to run the code on zSpace in Unity import zSpace plugin. For zSpace Plugin information for Unity to support main features please see [here](https://developer.zspace.com/docs/unity3d-setup). 
 

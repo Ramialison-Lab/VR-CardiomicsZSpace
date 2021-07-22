@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-
- // Needed to access onscreen elements
+﻿// Needed to access onscreen elements
 using System.Collections.Generic;
-using System.Globalization;
-using System;
 using System.Linq;
-using zSpace.Core.Input;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using zSpace.Core.Input;
 
 /*****
  * 
@@ -58,7 +55,7 @@ public class GSelection : MonoBehaviour
                 return;
 
             hName = result.gameObject.name;
-            switch(Compare.first)
+            switch (Compare.first)
             {
                 case 0:
                     // do nothing?
@@ -159,12 +156,12 @@ public class GSelection : MonoBehaviour
 
     private void makeOutline(string oName)
     {
-		
+
         Material sMat = GameObject.Find(oName).transform.GetComponent<Renderer>().material;
         sMat.shader = Shader.Find("Outlined/Silhouetted Bumped Diffuse");
         if (Compare.first == 1)
         {
-            sMat.SetColor("_OutlineColor", new Color(0, 0, 1)); 
+            sMat.SetColor("_OutlineColor", new Color(0, 0, 1));
         }
         else
         {
@@ -195,7 +192,7 @@ public class GSelection : MonoBehaviour
         {
             hp.Remove(piece);
         }
-			
+
         foreach (string piece in hp)
         {
             outAdd(piece, 2);
@@ -214,7 +211,7 @@ public class GSelection : MonoBehaviour
             outRemove(hp, 2);
         }
     }
-		
+
     // Uncomment to take screenshots by pressing the 'K' key during runtime
 
 
@@ -264,5 +261,5 @@ public class GSelection : MonoBehaviour
 	}
 	**/
 
-		
+
 }

@@ -22,7 +22,7 @@ namespace zSpace.Core.Samples
         {
             Debug.Log("Pointer Exited");
         }
-        
+
         public void OnPointerDown(PointerEventData eventData)
         {
             Debug.Log("Pointer Down");

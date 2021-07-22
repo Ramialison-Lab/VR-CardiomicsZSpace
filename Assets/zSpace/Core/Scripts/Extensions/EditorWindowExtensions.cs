@@ -38,7 +38,7 @@ namespace zSpace.Core.Extensions
                 s_gameViewType = assembly.GetType("UnityEditor.GameView");
             }
 
-            EditorWindow[] gameViewWindows = 
+            EditorWindow[] gameViewWindows =
                 (EditorWindow[])Resources.FindObjectsOfTypeAll(s_gameViewType);
 
             return (gameViewWindows.Length > 0);
@@ -93,10 +93,10 @@ namespace zSpace.Core.Extensions
             // Lazy initialization of EditorWindow docked method info.
             if (s_dockedMethodInfo == null)
             {
-                BindingFlags bindingFlags = 
-                    BindingFlags.Public | 
-                    BindingFlags.NonPublic | 
-                    BindingFlags.Instance | 
+                BindingFlags bindingFlags =
+                    BindingFlags.Public |
+                    BindingFlags.NonPublic |
+                    BindingFlags.Instance |
                     BindingFlags.Static;
 
                 PropertyInfo dockedPropertyInfo =
@@ -218,7 +218,7 @@ namespace zSpace.Core.Extensions
                 window.GetBorderWidth(),
                 window.GetTabHeight(),
                 size.x,
-                size.y - 1); 
+                size.y - 1);
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace zSpace.Core.Extensions
         /// </returns>
         public static int GetTabHeight(this EditorWindow window)
         {
-            int tabHeight = window.IsDocked() ? 
+            int tabHeight = window.IsDocked() ?
                 TabHeightDocked : TabHeightUndocked;
 
             return tabHeight;

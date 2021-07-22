@@ -28,7 +28,7 @@ namespace zSpace.Core
         [Tooltip(
             "The profile of the reference display the application is being " +
             "designed for.")]
-        private ZDisplay.Profile _displayReferenceProfile = 
+        private ZDisplay.Profile _displayReferenceProfile =
             ZDisplay.ReferenceProfile;
 
         [SerializeField]
@@ -136,7 +136,7 @@ namespace zSpace.Core
         /// If ZProvider.IsInitialized is false, this property will be 
         /// set to null.
         /// </remarks>
-        public static ZTarget StylusTarget => 
+        public static ZTarget StylusTarget =>
             Context?.TargetManager.StylusTarget;
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace zSpace.Core
 
             DisplayScale = ZDisplay.GetScale(DisplayReferenceSize, DisplaySize);
             DisplayScaleFactor = Mathf.Min(DisplayScale.x, DisplayScale.y);
-            
+
             // Update current window information.
             if (IsInitialized)
             {

@@ -21,7 +21,7 @@ namespace zSpace.Core.Samples
             this._cameraRig = GameObject.FindObjectOfType<ZCameraRig>();
             this._layoutGroup =
                 this.gameObject.GetComponent<VerticalLayoutGroup>();
-            this._baseButton = 
+            this._baseButton =
                 this._layoutGroup.GetComponentInChildren<Button>().gameObject;
 
             for (int i = 0; i < this._frames.Length; i++)
@@ -33,7 +33,7 @@ namespace zSpace.Core.Samples
 
                 int frameIndex = i;
                 button.GetComponent<Button>().onClick.AddListener(
-                    delegate{ this.SetFrame(frameIndex); });
+                    delegate { this.SetFrame(frameIndex); });
             }
             Destroy(this._baseButton);
         }

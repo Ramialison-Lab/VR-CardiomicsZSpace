@@ -84,7 +84,7 @@ namespace zSpace.Core.Input
         /// The scroll delta for the mouse is only stored in Vector2.y
         /// (Vector2.x is ignored).
         /// </remarks>
-        public override Vector2 ScrollDelta => 
+        public override Vector2 ScrollDelta =>
             UnityEngine.Input.mouseScrollDelta;
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace zSpace.Core.Input
         /// </remarks>
         public override Pose EndPointWorldPose => new Pose(
             this.HitInfo.worldPosition,
-            this.EventCamera?.ZeroParallaxPose.rotation ?? 
+            this.EventCamera?.ZeroParallaxPose.rotation ??
             this.transform.rotation);
 
         ////////////////////////////////////////////////////////////////////////

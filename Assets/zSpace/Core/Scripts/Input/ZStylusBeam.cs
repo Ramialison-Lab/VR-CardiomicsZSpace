@@ -54,7 +54,7 @@ namespace zSpace.Core.Input
             this._lineRenderer.gameObject.SetActive(pointer.IsVisible);
 
             this._lineRenderer.widthMultiplier =
-                this._originalWidthMultiplier * 
+                this._originalWidthMultiplier *
                 Mathf.Min(worldScale.x, worldScale.y);
 
             this.UpdateLineRendererPositions(pointer);

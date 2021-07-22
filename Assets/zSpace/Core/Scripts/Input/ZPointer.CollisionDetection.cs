@@ -30,7 +30,7 @@ namespace zSpace.Core.Input
                     return highPriorityResult;
                 }
             }
-            
+
             // Perform a raycast against all low priority objects.
             RaycastResult lowPriorityResult = this.Raycast(
                 ray, ~this.IgnoreMask & ~this.PriorityMask);

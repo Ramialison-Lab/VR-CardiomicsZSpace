@@ -84,7 +84,7 @@ namespace zSpace.Core.Samples
 
             // Update the grab object's position.
             this.transform.position =
-                pose.position + 
+                pose.position +
                 (this.transform.rotation * this._initialGrabOffset);
         }
 

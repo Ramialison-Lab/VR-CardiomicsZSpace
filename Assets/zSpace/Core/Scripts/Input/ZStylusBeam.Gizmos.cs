@@ -33,7 +33,7 @@ namespace zSpace.Core.Input
             {
                 Vector3 p0 = this._pointer.transform.position;
                 Vector3 p2 = this._pointer.HitInfo.worldPosition;
-                Vector3 p1 = 
+                Vector3 p1 =
                     p0 + Vector3.Project(p2 - p0, this._pointer.transform.forward);
 
                 Handles.color = Color.white;

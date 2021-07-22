@@ -98,7 +98,7 @@ namespace zSpace.Core.Input
             Matrix4x4 trackerToWorldMatrix =
                 this.EventCamera.CameraToWorldMatrix *
                 this._viewport.GetCoordinateSpaceTransform(
-                    ZCoordinateSpace.Tracker, 
+                    ZCoordinateSpace.Tracker,
                     ZCoordinateSpace.Camera);
 
             return trackerPose.GetTransformedBy(trackerToWorldMatrix);

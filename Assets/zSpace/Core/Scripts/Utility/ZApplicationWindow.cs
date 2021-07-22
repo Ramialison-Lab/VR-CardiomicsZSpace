@@ -11,7 +11,6 @@ using UnityEditor;
 using UnityEngine;
 
 using zSpace.Core.Extensions;
-using zSpace.Core.Interop;
 
 namespace zSpace.Core.Utility
 {
@@ -37,7 +36,7 @@ namespace zSpace.Core.Utility
 #if UNITY_EDITOR
                 // Grab the position and size of the GameView window
                 // when running from the editor.
-                EditorWindow gameViewWindow = 
+                EditorWindow gameViewWindow =
                     EditorWindowExtensions.GetGameViewWindow();
 
                 return gameViewWindow.GetRect();

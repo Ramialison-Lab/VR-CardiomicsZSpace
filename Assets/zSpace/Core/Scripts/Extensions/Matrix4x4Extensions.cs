@@ -35,10 +35,10 @@ namespace zSpace.Core.Extensions
         /// </returns>
         public static Matrix4x4 Lerp(Matrix4x4 from, Matrix4x4 to, float t)
         {
-            Vector3 position = 
+            Vector3 position =
                 Vector3.Lerp(from.GetColumn(3), to.GetColumn(3), t);
 
-            Quaternion rotation = 
+            Quaternion rotation =
                 Quaternion.Lerp(from.rotation, to.rotation, t);
 
             return Matrix4x4.TRS(position, rotation, Vector3.one);
@@ -151,7 +151,7 @@ namespace zSpace.Core.Extensions
         // Private Static Members
         ////////////////////////////////////////////////////////////////////////
 
-        private static readonly Matrix4x4 FlipHandednessMatrix = 
+        private static readonly Matrix4x4 FlipHandednessMatrix =
             Matrix4x4.Scale(new Vector4(1.0f, 1.0f, -1.0f));
     }
 }

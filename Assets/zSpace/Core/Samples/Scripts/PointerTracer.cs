@@ -29,7 +29,7 @@ namespace zSpace.Core.Samples
         // MonoBehaviour Callbacks
         ////////////////////////////////////////////////////////////////////////
 
-        void Start() 
+        void Start()
         {
             this._lineRenderer = gameObject.GetComponent<LineRenderer>();
 
@@ -41,7 +41,7 @@ namespace zSpace.Core.Samples
             this._pointList = new List<Vector3>();
         }
 
-        void Update() 
+        void Update()
         {
             if (this._isDrawing)
             {

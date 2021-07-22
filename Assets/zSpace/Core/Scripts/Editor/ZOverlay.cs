@@ -35,7 +35,7 @@ namespace zSpace.Core
         /// </summary>
         public static void Enable()
         {
-            EditorWindow gameViewWindow = 
+            EditorWindow gameViewWindow =
                 EditorWindowExtensions.GetGameViewWindow();
 
             // Update the Game View window's title text as an indicator
@@ -183,7 +183,7 @@ namespace zSpace.Core
 
         private delegate void CallbackDelegate();
 
-        private static CallbackDelegate s_onDestroyedCallback = 
+        private static CallbackDelegate s_onDestroyedCallback =
             new CallbackDelegate(OnDestroyed);
 
         private static string s_gameViewName = "Game";

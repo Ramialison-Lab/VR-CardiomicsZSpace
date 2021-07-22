@@ -47,7 +47,7 @@ namespace zSpace.Core.Samples
                     PlaneQuadTransform.forward,
                     PlaneQuadTransform.position);
             }
-            
+
             return base.GetDragPlane(pointer);
         }
 
@@ -107,7 +107,7 @@ namespace zSpace.Core.Samples
 
             // Update the grab object's position.
             this.transform.position =
-                pose.position + 
+                pose.position +
                 (this.transform.rotation * this._initialGrabOffset);
         }
 

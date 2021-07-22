@@ -4,8 +4,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-using System;
-
 using zSpace.Core.Interop;
 
 namespace zSpace.Core.Sdk
@@ -64,7 +62,7 @@ namespace zSpace.Core.Sdk
             {
                 this._target = value;
 
-                if(this._target != null)
+                if (this._target != null)
                 {
                     ZPlugin.LogOnError(ZPlugin.SetMouseEmulationTarget(
                         this._context.NativePtr, this._target.NativePtr),

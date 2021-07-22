@@ -109,7 +109,7 @@ namespace zSpace.Core
         static void CreateCameraRig()
         {
             // Create the camera rig.
-            ZCameraRig cameraRig = 
+            ZCameraRig cameraRig =
                 CreateGameObjectFromPrefab<ZCameraRig>("ZCameraRig");
 
             cameraRig.Frame = FindComponent<ZFrame>();
@@ -209,7 +209,7 @@ namespace zSpace.Core
         static bool ValidateEnableXROverlay()
         {
 #if UNITY_EDITOR_WIN
-            bool isValid = 
+            bool isValid =
                 ZProvider.IsInitialized &&
                 SystemInfo.graphicsDeviceType == GraphicsDeviceType.Direct3D11;
 
@@ -313,7 +313,7 @@ namespace zSpace.Core
             {
                 Selection.activeGameObject = gameObject;
             }
-            
+
             return gameObject.GetComponent<T>();
         }
 
@@ -326,7 +326,7 @@ namespace zSpace.Core
             {
                 component = Selection.activeGameObject.GetComponent<T>();
             }
-            
+
             // Otherwise search the entire scene for the first instance of T.
             if (component == null)
             {
@@ -336,7 +336,7 @@ namespace zSpace.Core
             return component;
         }
 
-        private static T FindAsset<T>(string filter, string relativePath = null) 
+        private static T FindAsset<T>(string filter, string relativePath = null)
             where T : Object
         {
             string[] guids = AssetDatabase.FindAssets(filter);
@@ -345,7 +345,7 @@ namespace zSpace.Core
             {
                 string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
 
-                if (string.IsNullOrEmpty(relativePath) || 
+                if (string.IsNullOrEmpty(relativePath) ||
                     assetPath.Contains(relativePath))
                 {
                     return (T)AssetDatabase.LoadAssetAtPath(assetPath, typeof(T));

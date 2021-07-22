@@ -116,8 +116,8 @@ namespace zSpace.Core.Interop
         /// A handle to the internal state of the zSpace SDK. 
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuInitialize", 
+            DllName,
+            EntryPoint = "zcuInitialize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError Initialize(out IntPtr context);
 
@@ -133,8 +133,8 @@ namespace zSpace.Core.Interop
         /// A handle to the internal state of the zSpace SDK.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuUpdate", 
+            DllName,
+            EntryPoint = "zcuUpdate",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError Update(IntPtr context);
 
@@ -147,8 +147,8 @@ namespace zSpace.Core.Interop
         /// A handle to the internal state of the zSpace SDK.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuShutDown", 
+            DllName,
+            EntryPoint = "zcuShutDown",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError ShutDown(IntPtr context);
 
@@ -171,13 +171,13 @@ namespace zSpace.Core.Interop
         /// The patch component of the revision number.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetRuntimeVersion", 
+            DllName,
+            EntryPoint = "zcuGetRuntimeVersion",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetRuntimeVersion(
-            IntPtr context, 
-            out int major, 
-            out int minor, 
+            IntPtr context,
+            out int major,
+            out int minor,
             out int patch);
 
         /// <summary>
@@ -191,11 +191,11 @@ namespace zSpace.Core.Interop
         /// True to enable tracking, false to disable it.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetTrackingEnabled", 
+            DllName,
+            EntryPoint = "zcuSetTrackingEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTrackingEnabled(
-            IntPtr context, 
+            IntPtr context,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isEnabled);
 
@@ -210,11 +210,11 @@ namespace zSpace.Core.Interop
         /// True if enabled, false otherwise.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuIsTrackingEnabled", 
+            DllName,
+            EntryPoint = "zcuIsTrackingEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTrackingEnabled(
-            IntPtr context, 
+            IntPtr context,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isEnabled);
 
@@ -231,8 +231,8 @@ namespace zSpace.Core.Interop
         /// in prior queries. You must query for these display handles again.
         /// </remarks>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuRefreshDisplays", 
+            DllName,
+            EntryPoint = "zcuRefreshDisplays",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError RefreshDisplays(IntPtr context);
 
@@ -247,11 +247,11 @@ namespace zSpace.Core.Interop
         /// The number of connected displays.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetNumDisplays", 
+            DllName,
+            EntryPoint = "zcuGetNumDisplays",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumDisplays(
-            IntPtr context, 
+            IntPtr context,
             out int numDisplays);
 
         /// <summary>
@@ -268,12 +268,12 @@ namespace zSpace.Core.Interop
         /// The number of displays of the specified type.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetNumDisplaysByType", 
+            DllName,
+            EntryPoint = "zcuGetNumDisplaysByType",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumDisplaysByType(
-            IntPtr context, 
-            ZDisplayType displayType, 
+            IntPtr context,
+            ZDisplayType displayType,
             out int numDisplays);
 
         /// <summary>
@@ -295,13 +295,13 @@ namespace zSpace.Core.Interop
         /// The handle for the display at the specified pixel location. 
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplay", 
+            DllName,
+            EntryPoint = "zcuGetDisplay",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplay(
-            IntPtr context, 
-            int x, 
-            int y, 
+            IntPtr context,
+            int x,
+            int y,
             out IntPtr displayHandle);
 
         /// <summary>
@@ -318,12 +318,12 @@ namespace zSpace.Core.Interop
         /// The handle for the display at the specified index.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayByIndex", 
+            DllName,
+            EntryPoint = "zcuGetDisplayByIndex",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayByIndex(
-            IntPtr context, 
-            int index, 
+            IntPtr context,
+            int index,
             out IntPtr displayHandle);
 
         /// <summary>
@@ -345,13 +345,13 @@ namespace zSpace.Core.Interop
         /// The handle for the display of the specified type.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayByType", 
+            DllName,
+            EntryPoint = "zcuGetDisplayByType",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayByType(
-            IntPtr context, 
-            ZDisplayType displayType, 
-            int index, 
+            IntPtr context,
+            ZDisplayType displayType,
+            int index,
             out IntPtr displayHandle);
 
         /// <summary>
@@ -365,11 +365,11 @@ namespace zSpace.Core.Interop
         /// The display's type.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayType", 
+            DllName,
+            EntryPoint = "zcuGetDisplayType",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayType(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             out ZDisplayType displayType);
 
         /// <summary>
@@ -385,11 +385,11 @@ namespace zSpace.Core.Interop
         /// The display's number.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayNumber", 
+            DllName,
+            EntryPoint = "zcuGetDisplayNumber",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayNumber(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             out int displayNumber);
 
         /// <summary>
@@ -404,11 +404,11 @@ namespace zSpace.Core.Interop
         /// The index of the display's GPU. 
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayAdapterIndex", 
+            DllName,
+            EntryPoint = "zcuGetDisplayAdapterIndex",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayAdapterIndex(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             out int adapterIndex);
 
         /// <summary>
@@ -422,11 +422,11 @@ namespace zSpace.Core.Interop
         /// The index for the attached monitor.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayMonitorIndex", 
+            DllName,
+            EntryPoint = "zcuGetDisplayMonitorIndex",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayMonitorIndex(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             out int monitorIndex);
 
         /// <summary>
@@ -449,15 +449,15 @@ namespace zSpace.Core.Interop
         /// The size of the user allocated buffer.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayAttributeStr", 
-            CallingConvention = CallingConvention.StdCall, 
+            DllName,
+            EntryPoint = "zcuGetDisplayAttributeStr",
+            CallingConvention = CallingConvention.StdCall,
             CharSet = CharSet.Ansi)]
         internal static extern ZPluginError GetDisplayAttributeStr(
-            IntPtr displayHandle, 
-            ZDisplayAttribute attribute, 
+            IntPtr displayHandle,
+            ZDisplayAttribute attribute,
             [param: MarshalAs(UnmanagedType.LPStr), Out()]
-            StringBuilder buffer, 
+            StringBuilder buffer,
             int bufferSize);
 
         /// <summary>
@@ -474,12 +474,12 @@ namespace zSpace.Core.Interop
         /// The size of the attribute's value.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayAttributeStrSize", 
+            DllName,
+            EntryPoint = "zcuGetDisplayAttributeStrSize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayAttributeStrSize(
-            IntPtr displayHandle, 
-            ZDisplayAttribute attribute, 
+            IntPtr displayHandle,
+            ZDisplayAttribute attribute,
             out int size);
 
         /// <summary>
@@ -496,12 +496,12 @@ namespace zSpace.Core.Interop
         /// The display's height in meters.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplaySize", 
+            DllName,
+            EntryPoint = "zcuGetDisplaySize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplaySize(
-            IntPtr displayHandle, 
-            out float width, 
+            IntPtr displayHandle,
+            out float width,
             out float height);
 
         /// <summary>
@@ -519,12 +519,12 @@ namespace zSpace.Core.Interop
         /// The y pixel location.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayPosition", 
+            DllName,
+            EntryPoint = "zcuGetDisplayPosition",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayPosition(
-            IntPtr displayHandle, 
-            out int x, 
+            IntPtr displayHandle,
+            out int x,
             out int y);
 
         /// <summary>
@@ -541,12 +541,12 @@ namespace zSpace.Core.Interop
         /// The height in pixels.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayNativeResolution", 
+            DllName,
+            EntryPoint = "zcuGetDisplayNativeResolution",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayNativeResolution(
-            IntPtr displayHandle, 
-            out int x, 
+            IntPtr displayHandle,
+            out int x,
             out int y);
 
         /// <summary>
@@ -566,13 +566,13 @@ namespace zSpace.Core.Interop
         /// The angle of the display about the z axis.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayAngle", 
+            DllName,
+            EntryPoint = "zcuGetDisplayAngle",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayAngle(
-            IntPtr displayHandle, 
-            out float x, 
-            out float y, 
+            IntPtr displayHandle,
+            out float x,
+            out float y,
             out float z);
 
         /// <summary>
@@ -586,11 +586,11 @@ namespace zSpace.Core.Interop
         /// The vertical refresh rate.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetDisplayVerticalRefreshRate", 
+            DllName,
+            EntryPoint = "zcuGetDisplayVerticalRefreshRate",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetDisplayVerticalRefreshRate(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             out float refreshRate);
 
         /// <summary>
@@ -606,11 +606,11 @@ namespace zSpace.Core.Interop
         /// True if connected, false otherwise.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuIsDisplayHardwarePresent", 
+            DllName,
+            EntryPoint = "zcuIsDisplayHardwarePresent",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsDisplayHardwarePresent(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isHardwarePresent);
 
@@ -632,13 +632,13 @@ namespace zSpace.Core.Interop
         /// (i.e. hit, screen position, etc.)
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuIntersectDisplay", 
+            DllName,
+            EntryPoint = "zcuIntersectDisplay",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IntersectDisplay(
-            IntPtr displayHandle, 
+            IntPtr displayHandle,
             [param: MarshalAs(UnmanagedType.LPStruct)]
-            ZPose pose, 
+            ZPose pose,
             out ZDisplayIntersectionInfo intersectionInfo);
 
         /// <summary>
@@ -658,13 +658,13 @@ namespace zSpace.Core.Interop
         /// A handle for the buffer.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuCreateStereoBuffer", 
+            DllName,
+            EntryPoint = "zcuCreateStereoBuffer",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError CreateStereoBuffer(
-            IntPtr context, 
-            int renderer, 
-            IntPtr reserved, 
+            IntPtr context,
+            int renderer,
+            IntPtr reserved,
             out IntPtr bufferHandle);
 
         /// <summary>
@@ -681,45 +681,45 @@ namespace zSpace.Core.Interop
         /// zcDestroyStereoBuffer().
         /// </remarks>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuDestroyStereoBuffer", 
+            DllName,
+            EntryPoint = "zcuDestroyStereoBuffer",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError DestroyStereoBuffer(
             IntPtr bufferHandle);
 
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuBeginStereoBufferPatternDetection", 
+            DllName,
+            EntryPoint = "zcuBeginStereoBufferPatternDetection",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError BeginStereoBufferPatternDetection(
-            IntPtr bufferHandle, 
+            IntPtr bufferHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isPatternDetectionEnabled);
 
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuEndStereoBufferPatternDetection", 
+            DllName,
+            EntryPoint = "zcuEndStereoBufferPatternDetection",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError EndStereoBufferPatternDetection(
-            IntPtr bufferHandle, 
+            IntPtr bufferHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isPatternDetected);
 
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuIsStereoBufferPatternDetected", 
+            DllName,
+            EntryPoint = "zcuIsStereoBufferPatternDetected",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsStereoBufferPatternDetected(
-            IntPtr bufferHandle, 
+            IntPtr bufferHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isPatternDetected);
 
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuIsStereoBufferSyncRequested", 
+            DllName,
+            EntryPoint = "zcuIsStereoBufferSyncRequested",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsStereoBufferSyncRequested(
-            IntPtr bufferHandle, 
+            IntPtr bufferHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isSyncRequested);
 
@@ -742,11 +742,11 @@ namespace zSpace.Core.Interop
         /// matrices for each eye.
         /// </remarks>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuCreateViewport", 
+            DllName,
+            EntryPoint = "zcuCreateViewport",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError CreateViewport(
-            IntPtr context, 
+            IntPtr context,
             out IntPtr viewportHandle);
 
         /// <summary>
@@ -763,8 +763,8 @@ namespace zSpace.Core.Interop
         /// calling zcDestroyViewport().
         /// </remarks>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuDestroyViewport", 
+            DllName,
+            EntryPoint = "zcuDestroyViewport",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError DestroyViewport(
             IntPtr viewportHandle);
@@ -784,12 +784,12 @@ namespace zSpace.Core.Interop
         /// The y coordinate for the upper left corner of the viewport.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetViewportPosition", 
+            DllName,
+            EntryPoint = "zcuSetViewportPosition",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetViewportPosition(
-            IntPtr viewportHandle, 
-            int x, 
+            IntPtr viewportHandle,
+            int x,
             int y);
 
         /// <summary>
@@ -807,12 +807,12 @@ namespace zSpace.Core.Interop
         /// The y coordinate for the upper left corner of the viewport.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetViewportPosition", 
+            DllName,
+            EntryPoint = "zcuGetViewportPosition",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetViewportPosition(
-            IntPtr viewportHandle, 
-            out int x, 
+            IntPtr viewportHandle,
+            out int x,
             out int y);
 
         /// <summary>
@@ -829,12 +829,12 @@ namespace zSpace.Core.Interop
         /// The height of the viewport in pixels.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetViewportSize", 
+            DllName,
+            EntryPoint = "zcuSetViewportSize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetViewportSize(
-            IntPtr viewportHandle, 
-            int width, 
+            IntPtr viewportHandle,
+            int width,
             int height);
 
         /// <summary>
@@ -851,12 +851,12 @@ namespace zSpace.Core.Interop
         /// The height of the viewport in pixels.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetViewportSize", 
+            DllName,
+            EntryPoint = "zcuGetViewportSize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetViewportSize(
-            IntPtr viewportHandle, 
-            out int width, 
+            IntPtr viewportHandle,
+            out int width,
             out int height);
 
         /// <summary>
@@ -877,13 +877,13 @@ namespace zSpace.Core.Interop
         /// The transformation matrix in order to transform from space a to b.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetCoordinateSpaceTransform", 
+            DllName,
+            EntryPoint = "zcuGetCoordinateSpaceTransform",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetCoordinateSpaceTransform(
-            IntPtr viewportHandle, 
-            ZCoordinateSpace a, 
-            ZCoordinateSpace b, 
+            IntPtr viewportHandle,
+            ZCoordinateSpace a,
+            ZCoordinateSpace b,
             out ZMatrix4 transform);
 
         /// <summary>
@@ -904,13 +904,13 @@ namespace zSpace.Core.Interop
         /// The input matrix to be transformed.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuTransformMatrix", 
+            DllName,
+            EntryPoint = "zcuTransformMatrix",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError TransformMatrix(
-            IntPtr viewportHandle, 
-            ZCoordinateSpace a, 
-            ZCoordinateSpace b, 
+            IntPtr viewportHandle,
+            ZCoordinateSpace a,
+            ZCoordinateSpace b,
             ref ZMatrix4 matrix);
 
         /// <summary>
@@ -924,11 +924,11 @@ namespace zSpace.Core.Interop
         /// A handle to the frustum.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustum", 
+            DllName,
+            EntryPoint = "zcuGetFrustum",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustum(
-            IntPtr viewportHandle, 
+            IntPtr viewportHandle,
             out IntPtr frustumHandle);
 
         /// <summary>
@@ -945,12 +945,12 @@ namespace zSpace.Core.Interop
         /// The desired value to be applied to the attribute.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetFrustumAttributeF32", 
+            DllName,
+            EntryPoint = "zcuSetFrustumAttributeF32",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetFrustumAttributeF32(
-            IntPtr frustumHandle, 
-            ZFrustumAttribute attribute, 
+            IntPtr frustumHandle,
+            ZFrustumAttribute attribute,
             float value);
 
         /// <summary>
@@ -967,12 +967,12 @@ namespace zSpace.Core.Interop
         /// The specified attribute's current value.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumAttributeF32", 
+            DllName,
+            EntryPoint = "zcuGetFrustumAttributeF32",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumAttributeF32(
-            IntPtr frustumHandle, 
-            ZFrustumAttribute attribute, 
+            IntPtr frustumHandle,
+            ZFrustumAttribute attribute,
             out float value);
 
         /// <summary>
@@ -989,12 +989,12 @@ namespace zSpace.Core.Interop
         /// The desired value to be applied to the attribute.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetFrustumAttributeB", 
+            DllName,
+            EntryPoint = "zcuSetFrustumAttributeB",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetFrustumAttributeB(
-            IntPtr frustumHandle, 
-            ZFrustumAttribute attribute, 
+            IntPtr frustumHandle,
+            ZFrustumAttribute attribute,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool value);
 
@@ -1012,12 +1012,12 @@ namespace zSpace.Core.Interop
         /// The specified attribute's current value.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumAttributeB", 
+            DllName,
+            EntryPoint = "zcuGetFrustumAttributeB",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumAttributeB(
-            IntPtr frustumHandle, 
-            ZFrustumAttribute attribute, 
+            IntPtr frustumHandle,
+            ZFrustumAttribute attribute,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool value);
 
@@ -1035,11 +1035,11 @@ namespace zSpace.Core.Interop
         /// A bitmask for the portal mode flags.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetFrustumPortalMode", 
+            DllName,
+            EntryPoint = "zcuSetFrustumPortalMode",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetFrustumPortalMode(
-            IntPtr frustumHandle, 
+            IntPtr frustumHandle,
             ZPortalMode portalModeFlags);
 
         /// <summary>
@@ -1055,11 +1055,11 @@ namespace zSpace.Core.Interop
         /// A bitmask representing the current portal mode settings.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumPortalMode", 
+            DllName,
+            EntryPoint = "zcuGetFrustumPortalMode",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumPortalMode(
-            IntPtr frustumHandle, 
+            IntPtr frustumHandle,
             out ZPortalMode portalModeFlags);
 
         /// <summary>
@@ -1073,11 +1073,11 @@ namespace zSpace.Core.Interop
         /// The desired camera offset in meters
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetFrustumCameraOffset", 
+            DllName,
+            EntryPoint = "zcuSetFrustumCameraOffset",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetFrustumCameraOffset(
-            IntPtr frustumHandle, 
+            IntPtr frustumHandle,
             [param: MarshalAs(UnmanagedType.LPStruct)]
             ZVector3 cameraOffset);
 
@@ -1092,11 +1092,11 @@ namespace zSpace.Core.Interop
         /// The current camera offset in meters.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumCameraOffset", 
+            DllName,
+            EntryPoint = "zcuGetFrustumCameraOffset",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumCameraOffset(
-            IntPtr frustumHandle, 
+            IntPtr frustumHandle,
             out ZVector3 cameraOffset);
 
         /// <summary>
@@ -1110,11 +1110,11 @@ namespace zSpace.Core.Interop
         /// The desired head pose.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuSetFrustumHeadPose", 
+            DllName,
+            EntryPoint = "zcuSetFrustumHeadPose",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetFrustumHeadPose(
-            IntPtr frustumHandle, 
+            IntPtr frustumHandle,
             [param: MarshalAs(UnmanagedType.LPStruct)]
             ZPose headPose);
 
@@ -1129,8 +1129,8 @@ namespace zSpace.Core.Interop
         /// The current head pose.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumHeadPose", 
+            DllName,
+            EntryPoint = "zcuGetFrustumHeadPose",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumHeadPose(IntPtr frustumHandle, out ZPose headPose);
 
@@ -1149,12 +1149,12 @@ namespace zSpace.Core.Interop
         /// The view matrix for the specified eye.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumViewMatrix", 
+            DllName,
+            EntryPoint = "zcuGetFrustumViewMatrix",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumViewMatrix(
-            IntPtr frustumHandle, 
-            ZEye eye, 
+            IntPtr frustumHandle,
+            ZEye eye,
             out ZMatrix4 viewMatrix);
 
         /// <summary>
@@ -1171,12 +1171,12 @@ namespace zSpace.Core.Interop
         /// The projection matrix for the specified eye.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumProjectionMatrix", 
+            DllName,
+            EntryPoint = "zcuGetFrustumProjectionMatrix",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumProjectionMatrix(
-            IntPtr frustumHandle, 
-            ZEye eye, 
+            IntPtr frustumHandle,
+            ZEye eye,
             out ZMatrix4 projectionMatrix);
 
         /// <summary>
@@ -1193,12 +1193,12 @@ namespace zSpace.Core.Interop
         /// The boundaries for the specified eye.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumBounds", 
+            DllName,
+            EntryPoint = "zcuGetFrustumBounds",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumBounds(
-            IntPtr frustumHandle, 
-            ZEye eye, 
+            IntPtr frustumHandle,
+            ZEye eye,
             out ZFrustumBounds bounds);
 
         /// <summary>
@@ -1219,111 +1219,111 @@ namespace zSpace.Core.Interop
         /// The eye's position.
         /// </param>
         [DllImport(
-            DllName, 
-            EntryPoint = "zcuGetFrustumEyePosition", 
+            DllName,
+            EntryPoint = "zcuGetFrustumEyePosition",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetFrustumEyePosition(
-            IntPtr frustumHandle, 
-            ZEye eye, 
-            ZCoordinateSpace coordinateSpace, 
+            IntPtr frustumHandle,
+            ZEye eye,
+            ZCoordinateSpace coordinateSpace,
             out ZVector3 eyePosition);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetNumTrackerDevices",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumTrackerDevices(
-            IntPtr context, 
+            IntPtr context,
             out int numDevices);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTrackerDevice",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTrackerDevice(
-            IntPtr context, 
-            int index, 
+            IntPtr context,
+            int index,
             out IntPtr deviceHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTrackerDeviceByName",
             CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         internal static extern ZPluginError GetTrackerDeviceByName(
-            IntPtr context, 
+            IntPtr context,
             [param: MarshalAs(UnmanagedType.LPStr)]
-            string deviceName, 
+            string deviceName,
             out IntPtr deviceHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTrackerDeviceEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTrackerDeviceEnabled(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTrackerDeviceEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTrackerDeviceEnabled(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isEnabled);
 
         [DllImport(
             DllName,
             EntryPoint = "zcuGetTrackerDeviceName",
-            CallingConvention = CallingConvention.StdCall, 
+            CallingConvention = CallingConvention.StdCall,
             CharSet = CharSet.Ansi)]
         internal static extern ZPluginError GetTrackerDeviceName(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             [param: MarshalAs(UnmanagedType.LPStr), Out()]
             StringBuilder buffer, int bufferSize);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTrackerDeviceNameSize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTrackerDeviceNameSize(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             out int size);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetNumTargets",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumTargets(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             out int numTargets);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetNumTargetsByType",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumTargetsByType(
-            IntPtr context, 
-            ZTargetType targetType, 
+            IntPtr context,
+            ZTargetType targetType,
             out int numTargets);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTarget",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTarget(
-            IntPtr deviceHandle, 
-            int index, 
+            IntPtr deviceHandle,
+            int index,
             out IntPtr targetHandle);
 
         [DllImport(
             DllName,
             EntryPoint = "zcuGetTargetByName",
-            CallingConvention = CallingConvention.StdCall, 
+            CallingConvention = CallingConvention.StdCall,
             CharSet = CharSet.Ansi)]
         internal static extern ZPluginError GetTargetByName(
-            IntPtr deviceHandle, 
+            IntPtr deviceHandle,
             [param: MarshalAs(UnmanagedType.LPStr)]
             string targetName, out IntPtr targetHandle);
 
@@ -1332,18 +1332,18 @@ namespace zSpace.Core.Interop
             EntryPoint = "zcuGetTargetByType",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetByType(
-            IntPtr context, 
-            ZTargetType targetType, 
-            int index, 
+            IntPtr context,
+            ZTargetType targetType,
+            int index,
             out IntPtr targetHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTargetName",
-            CallingConvention = CallingConvention.StdCall, 
+            CallingConvention = CallingConvention.StdCall,
             CharSet = CharSet.Ansi)]
         internal static extern ZPluginError GetTargetName(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.LPStr), Out()]
             StringBuilder buffer, int bufferSize);
 
@@ -1352,218 +1352,218 @@ namespace zSpace.Core.Interop
             EntryPoint = "zcuGetTargetNameSize",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetNameSize(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             out int size);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetVisible",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetVisible(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetMoveEventThresholds",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetMoveEventThresholds(
-            IntPtr targetHandle, 
-            float time, 
-            float distance, 
+            IntPtr targetHandle,
+            float time,
+            float distance,
             float angle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTargetMoveEventThresholds",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetMoveEventThresholds(
-            IntPtr targetHandle, 
-            out float time, 
-            out float distance, 
+            IntPtr targetHandle,
+            out float time,
+            out float distance,
             out float angle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTargetPose",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetPose(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             out ZPose pose);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetNumTargetButtons",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetNumTargetButtons(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             out int numButtons);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetButtonPressed",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetButtonPressed(
-            IntPtr targetHandle, 
-            int buttonId, 
+            IntPtr targetHandle,
+            int buttonId,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isButtonPressed);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetLedEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetLedEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isLedEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetLedEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetLedEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isLedEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetLedColor",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetLedColor(
-            IntPtr targetHandle, 
-            float r, 
-            float g, 
+            IntPtr targetHandle,
+            float r,
+            float g,
             float b);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTargetLedColor",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetLedColor(
-            IntPtr targetHandle, 
-            out float r, 
-            out float g, 
+            IntPtr targetHandle,
+            out float r,
+            out float g,
             out float b);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetVibrationEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetVibrationEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isVibrationEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetVibrationEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetVibrationEnabled(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isVibrationEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetVibrating",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetVibrating(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isVibrating);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuStartTargetVibration",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError StartTargetVibration(
-            IntPtr targetHandle, 
-            float onPeriod, 
-            float offPeriod, 
-            int numTimes, 
+            IntPtr targetHandle,
+            float onPeriod,
+            float offPeriod,
+            int numTimes,
             float intensity);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuStopTargetVibration",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError StopTargetVibration(
             IntPtr targetHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsTargetTapPressed",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsTargetTapPressed(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isTapPressed);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetTargetTapThreshold",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetTargetTapThreshold(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             float seconds);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetTargetTapThreshold",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetTargetTapThreshold(
-            IntPtr targetHandle, 
+            IntPtr targetHandle,
             out float seconds);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetMouseEmulationEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetMouseEmulationEnabled(
-            IntPtr context, 
+            IntPtr context,
             [param: MarshalAs(UnmanagedType.Bool)]
             bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuIsMouseEmulationEnabled",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError IsMouseEmulationEnabled(
-            IntPtr context, 
+            IntPtr context,
             [param: MarshalAs(UnmanagedType.Bool), Out()]
             out bool isEnabled);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetMouseEmulationTarget",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetMouseEmulationTarget(
-            IntPtr context, 
+            IntPtr context,
             IntPtr targetHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetMouseEmulationTarget",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetMouseEmulationTarget(
@@ -1571,37 +1571,37 @@ namespace zSpace.Core.Interop
             out IntPtr targetHandle);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetMouseEmulationMaxDistance",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetMouseEmulationMaxDistance(
-            IntPtr context, 
+            IntPtr context,
             float maxDistance);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetMouseEmulationMaxDistance",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetMouseEmulationMaxDistance(
-            IntPtr context, 
+            IntPtr context,
             out float maxDistance);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuSetMouseEmulationButtonMapping",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError SetMouseEmulationButtonMapping(
-            IntPtr context, 
-            int buttonId, 
+            IntPtr context,
+            int buttonId,
             ZMouseButton mouseButton);
 
         [DllImport(
-            DllName, 
+            DllName,
             EntryPoint = "zcuGetMouseEmulationButtonMapping",
             CallingConvention = CallingConvention.StdCall)]
         internal static extern ZPluginError GetMouseEmulationButtonMapping(
-            IntPtr context, 
-            int buttonId, 
+            IntPtr context,
+            int buttonId,
             out ZMouseButton mouseButton);
 
         [DllImport(
@@ -1664,7 +1664,7 @@ namespace zSpace.Core.Interop
             EntryPoint = "zcuSetXROverlayPosition",
             CallingConvention = CallingConvention.StdCall)]
         public static extern void SetXROverlayPosition(
-            int x, 
+            int x,
             int y);
 
         [DllImport(
@@ -1672,7 +1672,7 @@ namespace zSpace.Core.Interop
             EntryPoint = "zcuSetXROverlaySize",
             CallingConvention = CallingConvention.StdCall)]
         public static extern void SetXROverlaySize(
-            int width, 
+            int width,
             int height);
 
         [DllImport(
@@ -1680,7 +1680,7 @@ namespace zSpace.Core.Interop
             EntryPoint = "zcuSetXROverlayTextures",
             CallingConvention = CallingConvention.StdCall)]
         public static extern void SetXROverlayTextures(
-            IntPtr leftTexturePtr, 
+            IntPtr leftTexturePtr,
             IntPtr rightTexturePtr);
 
         ////////////////////////////////////////////////////////////////////////

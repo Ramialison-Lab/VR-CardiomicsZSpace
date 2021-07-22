@@ -26,7 +26,7 @@ namespace zSpace.Core.Samples
         // MonoBehaviour Callbacks
         ////////////////////////////////////////////////////////////////////////
 
-        void Start() 
+        void Start()
         {
             this._mat = this.gameObject.GetComponent<MeshRenderer>().material;
             this._oldColor = this._mat.GetColor("_Color");

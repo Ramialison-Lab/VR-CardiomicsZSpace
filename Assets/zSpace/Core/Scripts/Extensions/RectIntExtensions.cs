@@ -23,8 +23,8 @@ namespace zSpace.Core.Extensions
         /// </returns>
         public static bool Overlaps(this RectInt r, RectInt other)
         {
-            if (other.xMax > r.xMin && 
-                other.xMin < r.xMax && 
+            if (other.xMax > r.xMin &&
+                other.xMin < r.xMax &&
                 other.yMax > r.yMin)
             {
                 return other.yMin < r.yMax;

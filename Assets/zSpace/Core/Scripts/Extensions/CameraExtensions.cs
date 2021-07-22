@@ -83,7 +83,7 @@ namespace zSpace.Core.Extensions
         /// The target eye to render the perspective from.
         /// </param>
         public static void Render(
-            this Camera c, 
+            this Camera c,
             RenderTexture targetTexture,
             Camera.StereoscopicEye eye)
         {

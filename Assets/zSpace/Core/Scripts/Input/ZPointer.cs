@@ -192,7 +192,7 @@ namespace zSpace.Core.Input
             this._hitInfo.distance = this.DefaultHitDistance;
 
             this._hitInfo.worldPosition =
-                this.transform.position + 
+                this.transform.position +
                 (this.transform.forward * this.DefaultHitDistance);
 
             this._hitInfo.worldNormal = -this.transform.forward;
@@ -372,10 +372,10 @@ namespace zSpace.Core.Input
             {
                 case 1:
                     return PointerEventData.InputButton.Right;
-                    
+
                 case 2:
                     return PointerEventData.InputButton.Middle;
-                    
+
                 case 0:
                 default:
                     return PointerEventData.InputButton.Left;
@@ -414,7 +414,7 @@ namespace zSpace.Core.Input
             this.EventCamera.ZeroParallaxLocalToWorldMatrix.ToPoseMatrix();
 
         private Matrix4x4 DeltaScreenWorldPoseMatrix =>
-            this.ScreenWorldPoseMatrix * 
+            this.ScreenWorldPoseMatrix *
             this._pressScreenWorldPoseMatrix.inverse;
 
         private float WorldScale => this.EventCamera?.WorldScale.z ?? 1;
@@ -446,7 +446,7 @@ namespace zSpace.Core.Input
 
                 this.SendEvents();
             }
-            
+
             // Process the pointer's associated visualization.
             if (this.Visualization != null)
             {
@@ -495,7 +495,7 @@ namespace zSpace.Core.Input
 
                 this._pressHitInfo = this.Raycast(this.PointerRay);
                 this._pressObject = this._pressHitInfo.gameObject;
-                this._pressInteractable = 
+                this._pressInteractable =
                     this._pressObject?.GetComponent<ZPointerInteractable>();
 
                 this._pressScreenWorldPoseMatrix = this.ScreenWorldPoseMatrix;
@@ -511,10 +511,10 @@ namespace zSpace.Core.Input
                 this._pressLocalHitNormal = Vector3.Normalize(
                     this.transform.worldToLocalMatrix.MultiplyVector(
                         this._pressHitInfo.worldNormal));
-                
+
                 this._pressLocalHitDirection = Vector3.Normalize(
                     this.transform.worldToLocalMatrix.MultiplyVector(
-                        this._pressHitInfo.worldPosition - 
+                        this._pressHitInfo.worldPosition -
                         this.transform.position));
 
                 this._pressDragPolicy = this.GetDragPolicy(this._pressObject);
@@ -543,7 +543,7 @@ namespace zSpace.Core.Input
                     // Clamp the scroll distance based the pointer's distance
                     // from the hit plane captured on button press.
                     Plane hitPlane = new Plane(
-                        this._pressScreenWorldNormal, 
+                        this._pressScreenWorldNormal,
                         this._pressHitInfo.worldPosition);
 
                     hitPlane = this.DeltaScreenWorldPoseMatrix.TransformPlane(
@@ -742,7 +742,7 @@ namespace zSpace.Core.Input
                 return this.DefaultDragPolicy;
             }
 
-            ZPointerInteractable interactable = 
+            ZPointerInteractable interactable =
                 gameObject.GetComponent<ZPointerInteractable>();
 
             if (interactable != null)
@@ -776,7 +776,7 @@ namespace zSpace.Core.Input
 
         private const int MaxButtonCount = 10;
 
-        private static readonly List<ZPointer> s_instances = 
+        private static readonly List<ZPointer> s_instances =
             new List<ZPointer>();
 
         private ButtonState[] _buttonState = new ButtonState[MaxButtonCount];

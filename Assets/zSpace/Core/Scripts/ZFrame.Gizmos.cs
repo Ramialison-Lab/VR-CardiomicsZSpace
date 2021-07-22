@@ -38,8 +38,8 @@ namespace zSpace.Core
 
         private Matrix4x4 DisplayLocalToWorldMatrix =>
             Matrix4x4.TRS(
-                this.transform.position, 
-                this.WorldRotation, 
+                this.transform.position,
+                this.WorldRotation,
                 Vector3.one * this.ViewerScale) *
             Matrix4x4.Translate(
                 new Vector3(0, (0.5f - this.DisplayPivot) * this.DisplaySize.y, 0));

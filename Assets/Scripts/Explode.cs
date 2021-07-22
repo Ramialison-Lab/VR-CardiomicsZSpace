@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
- // Needed to access onscreen elements
-using System.Collections;
+// Needed to access onscreen elements
 
 /*****
  * 
@@ -36,7 +35,7 @@ public class Explode : MonoBehaviour
     // Record the start position for each of the slices
     void Start()
     {
-		
+
         for (int i = 0; i < 5; i++)
         {
             startPositions[i] = GameObject.Find(slices[i]).transform.position;
@@ -103,7 +102,7 @@ public class Explode : MonoBehaviour
     {
 
         float duration = 0.4f;
-	
+
         float t = 0f;
         while (t < 1)
         {

@@ -1,9 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
-using System.Collections.Generic;
-using System;
 
 /*****
  * 
@@ -104,12 +101,12 @@ public class dPanel : MonoBehaviour
 
     public void sleep()
     {
-       DD.SetActive(false);
+        DD.SetActive(false);
     }
 
     public void reset()
     {
-		
+
     }
 
     public static string SentenceCase(string input)

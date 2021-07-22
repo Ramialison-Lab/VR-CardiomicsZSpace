@@ -35,7 +35,7 @@ namespace zSpace.Core.Sdk
 
         public static readonly float DefaultFarClip = 100.0f;
 
-        public static readonly Vector3 DefaultCameraOffset = 
+        public static readonly Vector3 DefaultCameraOffset =
             Vector3.back * 0.25f;
 
         public static readonly float CoupledZoneDepth = -0.13f;
@@ -212,7 +212,7 @@ namespace zSpace.Core.Sdk
 
                 // Create the pose in display space.
                 Pose pose = new Pose(
-                    Vector3.back * this.CameraOffset.magnitude, 
+                    Vector3.back * this.CameraOffset.magnitude,
                     Quaternion.identity);
 
                 // Transform the pose to tracker space before
@@ -391,7 +391,7 @@ namespace zSpace.Core.Sdk
         {
             bool value = false;
             ZPlugin.LogOnError(ZPlugin.GetFrustumAttributeB(
-                this._nativePtr, attribute, out value),"GetFrustumAttributeB");
+                this._nativePtr, attribute, out value), "GetFrustumAttributeB");
 
             return value;
         }

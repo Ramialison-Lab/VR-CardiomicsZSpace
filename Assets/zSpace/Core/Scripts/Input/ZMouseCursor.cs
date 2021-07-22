@@ -38,7 +38,7 @@ namespace zSpace.Core.Input
 
         private void Awake()
         {
-            this._spriteRenderer = 
+            this._spriteRenderer =
                 this.GetComponentInChildren<SpriteRenderer>();
         }
 
@@ -122,10 +122,10 @@ namespace zSpace.Core.Input
                 -camera.ZeroParallaxPlane.normal,
                 camera.transform.position);
 
-            float distanceToCameraPlane = 
+            float distanceToCameraPlane =
                 monoCameraPlane.GetDistanceToPoint(point);
 
-            float distanceFromCameraToZeroParallax = 
+            float distanceFromCameraToZeroParallax =
                 camera.CameraOffset.magnitude;
 
             return (distanceToCameraPlane / distanceFromCameraToZeroParallax);

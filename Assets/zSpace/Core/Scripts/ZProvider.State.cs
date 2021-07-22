@@ -46,7 +46,7 @@ namespace zSpace.Core
                             "Provider. Reverting to mock tracker-less, " +
                             "monoscopic 3D.");
                     }
-                    
+
                     this.Dispose();
                 }
             }

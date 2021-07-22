@@ -68,9 +68,9 @@ namespace zSpace.Core
                 this.transform.position);
 
             this.Camera.CalculateFrustumCorners(
-                Viewport, 
-                screenDistance + (zOffset * worldScale), 
-                Camera.MonoOrStereoscopicEye.Mono, 
+                Viewport,
+                screenDistance + (zOffset * worldScale),
+                Camera.MonoOrStereoscopicEye.Mono,
                 corners);
         }
 
@@ -87,7 +87,7 @@ namespace zSpace.Core
 
         private void DrawRectangle(Vector3[] corners)
         {
-            Handles.DrawSolidRectangleWithOutline(  
+            Handles.DrawSolidRectangleWithOutline(
                 corners, Color.clear, Color.white);
         }
 
@@ -103,10 +103,10 @@ namespace zSpace.Core
 
         private static readonly Rect Viewport = new Rect(0, 0, 1, 1);
 
-        private static readonly Color NegativeParallaxColor = 
+        private static readonly Color NegativeParallaxColor =
             new Color32(30, 144, 255, 255);
 
-        private static readonly Color PositiveParallaxColor = 
+        private static readonly Color PositiveParallaxColor =
             new Color32(60, 179, 113, 255);
 
         private static readonly Color ZeroParallaxColor =
@@ -116,7 +116,7 @@ namespace zSpace.Core
 
         private Vector3[] _positiveParallaxCorners = new Vector3[CornerCount];
         private Vector3[] _negativeParallaxCorners = new Vector3[CornerCount];
-        private Vector3[] _zeroParallaxCorners = new Vector3[CornerCount]; 
+        private Vector3[] _zeroParallaxCorners = new Vector3[CornerCount];
     }
 }
 

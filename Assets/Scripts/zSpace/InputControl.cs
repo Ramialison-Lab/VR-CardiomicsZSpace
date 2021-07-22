@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
@@ -10,12 +8,12 @@ public class InputControl : MonoBehaviour
     {
         if (GameObject.Find("HeartCopy(Clone)") == null)
             Instantiate(copy);
-            GameObject.Find("HeartCopy(Clone)").transform.position = new Vector3(0.5f, 0, 1.13f);
+        GameObject.Find("HeartCopy(Clone)").transform.position = new Vector3(0.5f, 0, 1.13f);
     }
 
     public void adjustModels()
     {
-        GameObject.Find("Heart").transform.position = new Vector3(-1,0,1.13f);
+        GameObject.Find("Heart").transform.position = new Vector3(-1, 0, 1.13f);
     }
 
     public void readjustModel()

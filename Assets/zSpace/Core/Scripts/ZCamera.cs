@@ -250,7 +250,7 @@ namespace zSpace.Core
         /// Gets whether stereoscopic 3D rendering capabilities are available.
         /// </summary>
         public bool IsStereoAvailable => (this._frustum != null);
-        
+
         /// <summary>
         /// The current weight value between 0 and 1 (inclusive) that 
         /// represents whether the camera's perspective is monoscopic
@@ -397,17 +397,17 @@ namespace zSpace.Core
 
             camera.SetStereoViewMatrix(
                 Camera.StereoscopicEye.Left,
-                this._frustum.GetViewMatrix(ZEye.Left, this.WorldScale) * 
+                this._frustum.GetViewMatrix(ZEye.Left, this.WorldScale) *
                 this._monoWorldToCameraMatrix);
 
             camera.SetStereoViewMatrix(
                 Camera.StereoscopicEye.Right,
-                this._frustum.GetViewMatrix(ZEye.Right, this.WorldScale) * 
+                this._frustum.GetViewMatrix(ZEye.Right, this.WorldScale) *
                 this._monoWorldToCameraMatrix);
 
             // Update the camera's projection matrices for the 
             // center, left, and right eyes.
-            camera.projectionMatrix = 
+            camera.projectionMatrix =
                 this._frustum.GetProjectionMatrix(ZEye.Center);
 
             camera.SetStereoProjectionMatrix(
@@ -457,7 +457,7 @@ namespace zSpace.Core
                 this._leftCamera.gameObject.SetActive(!isPrimaryCameraEnabled);
                 this._leftCamera.enabled = !isPrimaryCameraEnabled;
             }
-            
+
             if (this._rightCamera)
             {
                 this._rightCamera.gameObject.SetActive(!isPrimaryCameraEnabled);
@@ -487,7 +487,7 @@ namespace zSpace.Core
         {
             if (this._frustum != null)
             {
-                Matrix4x4 viewMatrix = 
+                Matrix4x4 viewMatrix =
                     this._frustum.GetViewMatrix(eye).FlipHandedness();
 
                 Matrix4x4 localPoseMatrix =

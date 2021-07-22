@@ -75,7 +75,7 @@ namespace zSpace.Core.Utility
             if (!this.OverrideAngle)
             {
                 displayEulerAngles =
-                    ZProvider.CurrentDisplay?.EulerAngles ?? 
+                    ZProvider.CurrentDisplay?.EulerAngles ??
                     ZDisplay.DefaultEulerAngles;
 
                 this.Angle = displayEulerAngles.x;

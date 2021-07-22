@@ -14,13 +14,13 @@ namespace zSpace.Core.Samples
     public class Rotator : MonoBehaviour
     {
         public Vector3 DegreesPerSecond;
-        
+
         void Update()
         {
             Vector3 deltaAngles = this.DegreesPerSecond * Time.unscaledDeltaTime;
             Vector3 eulerAngles = this.transform.localEulerAngles;
 
-            this.transform.localRotation = 
+            this.transform.localRotation =
                 Quaternion.Euler(eulerAngles) *
                 Quaternion.Euler(deltaAngles);
         }

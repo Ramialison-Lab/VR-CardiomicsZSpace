@@ -91,7 +91,7 @@ namespace zSpace.Core.Utility
         private void DrawAngleClamp(float angle, Color color)
         {
             Vector3 position = this.ComputePositionOnArc(angle);
-            
+
             Handles.color = color;
             Handles.DrawLine(Vector3.zero, position);
             Handles.SphereHandleCap(
@@ -135,7 +135,7 @@ namespace zSpace.Core.Utility
         private static readonly Color ArcOutlineColor =
             new Color32(0, 191, 255, 155);
 
-        private static readonly Vector3[] GroundPlaneVertices = 
+        private static readonly Vector3[] GroundPlaneVertices =
             new Vector3[]
             {
                 new Vector3(1, 0, 1),

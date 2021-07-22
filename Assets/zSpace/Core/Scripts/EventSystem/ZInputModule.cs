@@ -136,10 +136,10 @@ namespace zSpace.Core.EventSystems
 
             eventData.Pointer = pointer;
             eventData.ButtonId = buttonId;
-            eventData.IsUIObject = 
+            eventData.IsUIObject =
                 (hitInfo.gameObject?.GetComponent<RectTransform>() != null);
-            eventData.Delta3D = 
-                hitInfo.worldPosition - 
+            eventData.Delta3D =
+                hitInfo.worldPosition -
                 eventData.pointerCurrentRaycast.worldPosition;
 
             eventData.button = pointer.GetButtonMapping(buttonId);
@@ -176,7 +176,7 @@ namespace zSpace.Core.EventSystems
             // grab the hit object's pointer click handler as a fallback.
             if (pressHandler == null)
             {
-                pressHandler = 
+                pressHandler =
                     ExecuteEvents.GetEventHandler<IPointerClickHandler>(
                         hitObject);
             }
@@ -188,8 +188,8 @@ namespace zSpace.Core.EventSystems
             {
                 float timeSincePress = time - eventData.clickTime;
 
-                eventData.clickCount = 
-                    (timeSincePress < eventData.Pointer.ClickTimeThreshold) ? 
+                eventData.clickCount =
+                    (timeSincePress < eventData.Pointer.ClickTimeThreshold) ?
                         eventData.clickCount + 1 : 1;
             }
             else
@@ -201,14 +201,14 @@ namespace zSpace.Core.EventSystems
             eventData.clickTime = time;
             eventData.rawPointerPress = hitObject;
             eventData.pointerPress = pressHandler;
-            eventData.pointerDrag = 
+            eventData.pointerDrag =
                 ExecuteEvents.GetEventHandler<IDragHandler>(hitObject);
 
             if (eventData.pointerDrag != null)
             {
                 ExecuteEvents.Execute(
-                    eventData.pointerDrag, 
-                    eventData, 
+                    eventData.pointerDrag,
+                    eventData,
                     ExecuteEvents.initializePotentialDrag);
             }
         }
@@ -220,15 +220,15 @@ namespace zSpace.Core.EventSystems
 
             // Execute pointer up event.
             ExecuteEvents.Execute(
-                eventData.pointerPress, 
-                eventData, 
+                eventData.pointerPress,
+                eventData,
                 ExecuteEvents.pointerUpHandler);
 
             GameObject clickHandler =
                 ExecuteEvents.GetEventHandler<IPointerClickHandler>(hitObject);
 
             // Execute pointer click and drop events.
-            if (eventData.eligibleForClick && 
+            if (eventData.eligibleForClick &&
                 (eventData.pointerPress == clickHandler ||
                  timeSincePress < eventData.Pointer.ClickTimeThreshold))
             {
@@ -252,8 +252,8 @@ namespace zSpace.Core.EventSystems
             if (eventData.pointerDrag != null && eventData.dragging)
             {
                 ExecuteEvents.Execute(
-                    eventData.pointerDrag, 
-                    eventData, 
+                    eventData.pointerDrag,
+                    eventData,
                     ExecuteEvents.endDragHandler);
             }
 
@@ -277,7 +277,7 @@ namespace zSpace.Core.EventSystems
         //       here to account for 3D movement and scrolling.
         private void ProcessDrag(ZPointerEventData eventData)
         {
-            bool isPointerActive = 
+            bool isPointerActive =
                 eventData.IsPointerMoving3D() || eventData.IsScrolling();
 
             bool shouldStartDrag =
@@ -331,7 +331,7 @@ namespace zSpace.Core.EventSystems
         {
             if (!Mathf.Approximately(eventData.scrollDelta.sqrMagnitude, 0))
             {
-                GameObject hitObject = 
+                GameObject hitObject =
                     eventData.pointerCurrentRaycast.gameObject;
 
                 GameObject scrollHandler =

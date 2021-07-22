@@ -177,9 +177,9 @@ namespace zSpace.Core.UI
             if (e != null)
             {
                 this.Raycast(
-                    e.Pointer.PointerRay, 
-                    resultAppendList, 
-                    float.PositiveInfinity, 
+                    e.Pointer.PointerRay,
+                    resultAppendList,
+                    float.PositiveInfinity,
                     ~0);
             }
             else
@@ -195,7 +195,7 @@ namespace zSpace.Core.UI
         private void Raycast(
             Ray ray,
             List<RaycastResult> resultAppendList,
-            float maxDistance, 
+            float maxDistance,
             int layerMask)
         {
             // Potentially reduce the maximum hit distance based on whether
@@ -227,7 +227,7 @@ namespace zSpace.Core.UI
             }
 
             // Retrieve the list of graphics associated with the canvas.
-            IList<Graphic> graphics = 
+            IList<Graphic> graphics =
                 GraphicRegistry.GetGraphicsForCanvas(this.Canvas);
 
             // Iterate through each of graphics and perform hit tests.
@@ -298,11 +298,11 @@ namespace zSpace.Core.UI
                 return false;
             }
 
-            Vector3 worldPosition = 
+            Vector3 worldPosition =
                 ray.origin + (ray.direction * distance);
 
             Vector3 screenPosition =
-                this.eventCamera.WorldToScreenPoint(worldPosition);            
+                this.eventCamera.WorldToScreenPoint(worldPosition);
 
             // Skip graphics that have failed the bounds test.
             if (!RectTransformUtility.RectangleContainsScreenPoint(

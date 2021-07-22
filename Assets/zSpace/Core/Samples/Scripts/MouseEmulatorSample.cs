@@ -33,7 +33,7 @@ namespace zSpace.Core.Samples
             }
             else
             {
-                Debug.LogWarning("ZProvider can not initialize.\n" + 
+                Debug.LogWarning("ZProvider can not initialize.\n" +
                     "Mouse emulation is unavailable.");
             }
         }

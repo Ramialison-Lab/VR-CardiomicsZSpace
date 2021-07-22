@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.IO;
 using UnityEngine;
-using System.IO;
 using UnityEngine.UI;
 
 public class LogFile : MonoBehaviour
@@ -15,7 +13,7 @@ public class LogFile : MonoBehaviour
     public InputField geneInput;
     private void Start()
     {
-        
+
         path = Application.dataPath + "/SessionLog.txt";
         File.WriteAllText(path, "Logfile \n\n" + System.DateTime.Now + "\n \n");
         File.AppendAllText(path, "*********************************************************\n\n");

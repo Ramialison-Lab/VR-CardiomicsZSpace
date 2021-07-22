@@ -83,7 +83,7 @@ namespace zSpace.Core
         }
 
         private void RefreshOverlayTexture(
-            Vector2Int size, 
+            Vector2Int size,
             ref RenderTexture renderTexture,
             ref IntPtr renderTexturePtr)
         {
@@ -121,7 +121,7 @@ namespace zSpace.Core
             // Determine whether to swap the eyes.
             bool swapEyes = EditorPrefs.GetBool(EnableEyeSwapMenuItem);
 
-            RenderTexture leftTexture = 
+            RenderTexture leftTexture =
                 swapEyes ? this._rightTexture : this._leftTexture;
 
             RenderTexture rightTexture =
@@ -131,30 +131,30 @@ namespace zSpace.Core
             switch (this.StereoRenderMode)
             {
                 case RenderMode.SingleCamera:
-                {
-                    this.Camera.enabled = false;
+                    {
+                        this.Camera.enabled = false;
 
-                    this.Camera.Render(
-                        leftTexture,
-                        Camera.StereoscopicEye.Left,
-                        this.GetPose(ZEye.Left));
+                        this.Camera.Render(
+                            leftTexture,
+                            Camera.StereoscopicEye.Left,
+                            this.GetPose(ZEye.Left));
 
-                    this.Camera.Render(
-                        rightTexture,
-                        Camera.StereoscopicEye.Right,
-                        this.GetPose(ZEye.Right));
-                }
-                break;
+                        this.Camera.Render(
+                            rightTexture,
+                            Camera.StereoscopicEye.Right,
+                            this.GetPose(ZEye.Right));
+                    }
+                    break;
 
                 case RenderMode.MultiCamera:
-                {
-                    this._leftCamera.enabled = false;
-                    this._leftCamera.Render(leftTexture);
+                    {
+                        this._leftCamera.enabled = false;
+                        this._leftCamera.Render(leftTexture);
 
-                    this._rightCamera.enabled = false;
-                    this._rightCamera.Render(rightTexture);
-                }
-                break;
+                        this._rightCamera.enabled = false;
+                        this._rightCamera.Render(rightTexture);
+                    }
+                    break;
             }
         }
 

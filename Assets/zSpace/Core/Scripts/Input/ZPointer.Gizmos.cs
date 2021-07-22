@@ -62,7 +62,7 @@ namespace zSpace.Core.Input
 
                     Handles.color = Color.white;
                     this.DrawDiscs(startPoint, projectedHitPoint, hitRadius, 5);
-     
+
                     Handles.DrawLine(startPoint, projectedHitPoint);
                     Handles.DrawDottedLine(hitPoint, projectedHitPoint, 5);
                 }

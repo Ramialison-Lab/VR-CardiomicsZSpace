@@ -34,7 +34,7 @@ namespace zSpace.Core
 
         private void Awake()
         {
-            this._displayAligner = 
+            this._displayAligner =
                 this.GetComponentInChildren<ZDisplayAligner>();
         }
 

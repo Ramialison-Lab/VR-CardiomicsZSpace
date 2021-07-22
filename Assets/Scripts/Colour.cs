@@ -1,13 +1,12 @@
-using UnityEngine;
-using UnityEngine.UI;
-
+using System;
+using System.Collections;
 // Needed to access onscreen elements
 using System.Collections.Generic;
-using System.Collections;
 using System.Globalization;
-using System.Runtime.InteropServices;
 using System.Linq;
-using System;
+using System.Runtime.InteropServices;
+using UnityEngine;
+using UnityEngine.UI;
 
 /*****
  * 
@@ -102,6 +101,7 @@ public class Colour : MonoBehaviour
     //public Text geneText;
     public Text geneOriginalText;
     public Text geneCopyText;
+    public string csvName = "fake_mouse_expression_data";
     private string mainGene;
     private string secondGene;
     private LogFile logFile;
@@ -188,7 +188,7 @@ public class Colour : MonoBehaviour
 #if USE_REAL_DATA
         var csvFilenameBase = "fernP2_real";
 #else
-        var csvFilenameBase = "fake_mouse_expression_data";
+        var csvFilenameBase = csvName;
 #endif
         TextAsset textAsset = Resources.Load(csvFilenameBase) as TextAsset; //string input =  result.text;
         string[] wArray = textAsset.text.Split("\n"[0]);
@@ -250,7 +250,8 @@ public class Colour : MonoBehaviour
         return -1;
     }
 
-    public void InitExpressionDataNameIndexMapping() {
+    public void InitExpressionDataNameIndexMapping()
+    {
         expressionDataNameIndexMapping = new Dictionary<string, int>(valuesCount);
         for (int i = 0; i < valuesCount; i++)
         {
@@ -290,7 +291,8 @@ public class Colour : MonoBehaviour
             }
             allGeneNames.Add(line.Trim().ToLower());
             count++;
-            if ((count % yield_every) == 0) {
+            if ((count % yield_every) == 0)
+            {
                 // yield return null;
                 // Debug.Log(allGeneNames.Count);
                 yield return new WaitForSeconds(.05f);
@@ -495,7 +497,8 @@ public class Colour : MonoBehaviour
         //loadingSpinner.SetActive(true);
 
         // allGeneNames gets populated on startup - we can't do anything until it's filled
-        while (!_allGenes_ready) {
+        while (!_allGenes_ready)
+        {
             yield return new WaitForSeconds(0.2f);
         }
 
@@ -526,7 +529,8 @@ public class Colour : MonoBehaviour
                 //JsAlert(geneName + " is not a valid gene name.");
 #endif
                 //return;
-                if (count % yield_every == 0) {
+                if (count % yield_every == 0)
+                {
                     yield return new WaitForSeconds(yield_time);
                 }
                 continue;
@@ -557,7 +561,7 @@ public class Colour : MonoBehaviour
 #if UNITY_EDITOR
             for (int i = 0; i < 18; i++)
             {
-              //  Debug.Log("Gene: " + geneName + ", Piece " + i.ToString() + ", Value: " + expressionForGene[i].ToString());
+                //  Debug.Log("Gene: " + geneName + ", Piece " + i.ToString() + ", Value: " + expressionForGene[i].ToString());
             }
 #endif
             // sum
@@ -566,7 +570,8 @@ public class Colour : MonoBehaviour
                 averageValues[i] += expressionForGene[i];
             }
 
-            if (count % yield_every == 0) {
+            if (count % yield_every == 0)
+            {
                 yield return new WaitForSeconds(yield_time);
             }
         }

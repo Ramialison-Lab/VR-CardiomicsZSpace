@@ -1,9 +1,9 @@
-# 3D-Cardiomics
+# 3D-Cardiomics-VR (zSpace)
 ## A visual system for the exploration of cardiac transcriptome data
 
 
 ### Overview
-3D-Cardiomics provides a framework to map multi dimensional data (such as intensity and location of gene expression) on to 3D models in a heatmap-like manner. In our use case the intensity is the level of gene expression of those expressed in the adult heart, and the location is this expression level in 18 discrete pieces of the heart as measured by RNA-seq.
+3D-Cardiomics-VR for zSpace provides a framework to map multi dimensional data (such as intensity and location of gene expression) on to 3D models in a heatmap-like manner. In our use case the intensity is the level of gene expression of those expressed in the adult heart, and the location is this expression level in 18 discrete pieces of the heart as measured by RNA-seq.
 
 ### Important Files
 The expression values are stored in

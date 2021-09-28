@@ -61,11 +61,11 @@ To select an expression value simply press the [input field (1)](#menu) by eithe
 ### <a name="selectExpression">How to select an expression value </a>
 
 Per default the first model will be automatically selected for values chosen from the [input field (1)](#menu). Once an expression value was chosen for the first object two new buttons will appear in the menu. The *Combined* button allows to add a second object, while the [*heatmap* button}(#heatmap) allows a difference based comparison of both objects.
+![zSpace_comb_heatmap](https://user-images.githubusercontent.com/79250095/135041483-c39e27e8-5588-43cc-991b-e963eb8a50d3.png)
 
-![image](https://user-images.githubusercontent.com/79250095/135041794-ae3713b9-c9b6-44ff-b2a8-99811be2b178.png)
 
 Clicking the *Combined* button, the second object will be added as shown in the following:
+![image](https://user-images.githubusercontent.com/79250095/135041794-ae3713b9-c9b6-44ff-b2a8-99811be2b178.png)
 
-![zSpace_comb_heatmap](https://user-images.githubusercontent.com/79250095/135041483-c39e27e8-5588-43cc-991b-e963eb8a50d3.png)
 
 Once a expression value from the [*Similar Genes (4)*](#menu) is selected, it will automatically be expressed on the new heartmodel to compare it with the first selection. 

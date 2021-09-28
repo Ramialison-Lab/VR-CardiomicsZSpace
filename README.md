@@ -63,9 +63,35 @@ To select an expression value simply press the [input field (1)](#menu) by eithe
 Per default the first model will be automatically selected for values chosen from the [input field (1)](#menu). Once an expression value was chosen for the first object two new buttons will appear in the menu. The *Combined* button allows to add a second object, while the [*heatmap* button}(#heatmap) allows a difference based comparison of both objects.
 ![zSpace_comb_heatmap](https://user-images.githubusercontent.com/79250095/135041483-c39e27e8-5588-43cc-991b-e963eb8a50d3.png)
 
-
 Clicking the *Combined* button, the second object will be added as shown in the following:
 ![image](https://user-images.githubusercontent.com/79250095/135041794-ae3713b9-c9b6-44ff-b2a8-99811be2b178.png)
 
-
 Once a expression value from the [*Similar Genes (4)*](#menu) is selected, it will automatically be expressed on the new heartmodel to compare it with the first selection. 
+
+### <a name="explode">Explode Function</a>
+The explode function will expand the model based on its hierarchy. this feature might not work properly for custom objects. To toggle between the normal view and the exploded view press the [*Expand button (2)*](#menu).
+
+![Screenshot (238)](https://user-images.githubusercontent.com/79250095/134447818-21544de8-5dd4-4689-834d-6c8a84e938db.png)
+
+### Change between absolute and normalized expression values
+
+VR-Cardiomics allows to present expression data either in absolute or in normalised values. Our example data is based on log2CPM values for absolute. If [own datasets](#custom) is used, the absolute values will represent the uploaded values of the csv file. Toggle between Normalised or Absolute by using the [*N/A button (9)*](#menu).
+
+### <a name="heatmap">How to use the heatmap comparison </a>
+
+The heatmap comparison is a useful feature to allow calculating the absolute differences of each piece of the object between two expression patterns. The feature will automatically calculate those differences and apply a new colourisation to the model regarding how big the differences in each selected piece are. To use the heatmap function just select an expression for both objects and then press the *Heatmap button* that automatically appears when selecting a expression value. (see [How to select an expression value](#selectExpression)).
+
+### Export data/images
+
+1. **Exporting Similar Expressions** → If an expression value is [selected](#selectExpression) a list of similar expressions will be calculated based on the selection. This list can be exported as a csv file using the export button on the [menu (5)](#menu). This CSV file is then saved in the Asset folder of Unity (blue) calles *SimilarGenes.txt*.
+2. **Logfile** → For each session a logfile will be created to keep track of everything you did during your session. This logfile is saved automatically on your local machine within the Assets folder of Unity (blue) called *SessionLog.txt*.
+ ![zSpace_Files](https://user-images.githubusercontent.com/79250095/135043900-ec6df8b7-a55c-41b3-a181-f39a984ff93d.png) 
+
+
+### Piecewise Comparison / Group Selection
+The *piecewise comparison/ group selection* is a feature that allows to group a number of pieces of the object together in two groups. Based on those two groups a list of expression values is generated matching the pattern of the selected pieces. 
+To use this feature press the *Piecewise Comparison* Button on the [menu (6)](#menu). All objects will be deleted except of one object. This object can be used to select the pieces of the first group. Simply click on them using the zSpace Stylus or using a mouse. The pieces will be highlighted to confirm the selection. Now push the button of the [menu (6)](#menu) again to confirm the first group and start selecting new pieces for group 2. If the selection is done just press the button of the [menu (6)](#menu) again to confirm selection and start calculating the matching expression values. The results will be shown in the table below. 
+To deselect pieces from the selection just select them anew.
+
+### Additional features
+TBD
